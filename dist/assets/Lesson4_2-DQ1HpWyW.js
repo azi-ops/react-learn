@@ -1,0 +1,17 @@
+import{j as e}from"./index-fCZyuqB2.js";import{C as t}from"./CodeComparison-B_ysuKRn.js";import{C as s}from"./Challenge-B2Dev4fs.js";import{C as n}from"./Callout-B_CeIBza.js";import{S as r}from"./StepByStep-Be1tR1cd.js";import"./CodeBlock-y81Z23mq.js";function p(){return e.jsxs("div",{className:"lesson",children:[e.jsxs("div",{className:"lesson-header",children:[e.jsx("span",{className:"lesson-tag",children:"Chapter 4 — Props"}),e.jsx("h1",{children:"Destructuring Props"}),e.jsx("p",{className:"lesson-subtitle",children:"Writing cleaner, more professional React code."})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"🎯 What You'll Learn"}),e.jsxs("ul",{children:[e.jsx("li",{children:"Destructuring props in the function signature"}),e.jsx("li",{children:"Setting default prop values"}),e.jsx("li",{children:"Passing entire objects vs spreading props"})]})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"📖 The Concept"}),e.jsx("p",{children:"Writing `props.` over and over again gets tedious. Because `props` is just a JavaScript object, we can use ES6 object destructuring to extract the exact properties we want right inside the function parentheses. This makes it instantly obvious what data a component requires."})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"🔗 JavaScript Connection"}),e.jsx(t,{leftLabel:"Old Way (props object)",rightLabel:"Modern Way (Destructured)",leftCode:`function Card(props) {
+  return <h2>{props.title}</h2>;
+}`,rightCode:`function Card({ title }) {
+  return <h2>{title}</h2>;
+}`,language:"jsx"})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"💻 Code Example"}),e.jsx(r,{steps:[{title:"Standard Destructuring",code:`function ProductCard({ title, price }) {
+  return <p>{title} - ${price}</p>;
+}`,language:"jsx",explanation:"Extracting variables directly."},{title:"Default Values",code:`function ProductCard({ title, price, category = "General" }) {
+  return <p>{category}</p>;
+}`,language:"jsx",explanation:"If the parent doesn't pass a category, it defaults to 'General'."},{title:"Spreading Props",code:`// Parent
+<ProductCard {...productObj} />
+
+// Child
+function ProductCard({ title, price }) { ... }`,language:"jsx",explanation:"A shortcut to pass all object properties as individual props."}]})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"🏪 In ShopHub"}),e.jsxs("p",{children:["Almost every component in ShopHub will use destructuring. Our `Button` component might look like: `function Button(",(text,variant="primary",disabled),")`."]})]}),e.jsxs("section",{className:"lesson-section",children:[e.jsx("h2",{children:"⚠️ Common Mistakes"}),e.jsxs(n,{type:"warning",children:["Forgetting the curly braces! `function Card(title)` is WRONG because React passes an OBJECT. It must be `function Card(",title,")` to destructure the object."]})]}),e.jsx(s,{id:"4-2-challenge",title:"Refactor to Destructuring",description:"Rewrite this component using inline destructuring and add a default value of '0' for the rating prop: function Review(props) { return <div>{props.author}: {props.rating} stars</div> }",hint:"Put { author, rating = 0 } in the parentheses.",answer:`function Review({ author, rating = 0 }) {
+  return (
+    <div>{author}: {rating} stars</div>
+  );
+}`,explanation:"This is much cleaner! We no longer need to type 'props.' inside the JSX, and we safely handle missing rating data.",difficulty:"easy"})]})}export{p as default};
